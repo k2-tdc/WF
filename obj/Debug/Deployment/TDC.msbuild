@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="CoreDeploy">
+  <PropertyGroup>
+    <Deploy_Processes>True</Deploy_Processes>
+    <Create_Notifications>True</Create_Notifications>
+    <Create_Workflow_SmartObjects>True</Create_Workflow_SmartObjects>
+    <Create_Workflow_Reporting_SmartObjects>True</Create_Workflow_Reporting_SmartObjects>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TestOnly Condition="$(TestOnly) == ''">False</TestOnly>
+    <Environment Condition="$(Environment) == ''">Development</Environment>
+  </PropertyGroup>
+  <PropertyGroup Condition="$(Environment) == 'Development'">
+    <EnvironmentFields>
+      <Root Name="Development" xmlns="">
+        <Field Name="SmartObject Server" Value="Integrated=True;IsPrimaryLogin=True;Authenticate=True;EncryptedPassword=False;Host=appsrvuat.wfs.tdc.org.hk;Port=5555" />
+        <Field Name="Workspace Url" Value="http://appsrvuat.wfs.tdc.org.hk:4443" />
+        <Field Name="Escalation HR" Value="5" />
+        <Field Name="SmartForms Server" Value="Integrated=True;IsPrimaryLogin=True;Authenticate=True;EncryptedPassword=False;Host=appsrvuat.wfs.tdc.org.hk;Port=5555" />
+        <Field Name="SmartForms Designer SSL" Value="https://appsrvuat.wfs.tdc.org.hk:5443/Designer" />
+        <Field Name="ServiceObject Server" Value="Integrated=True;IsPrimaryLogin=True;Authenticate=True;EncryptedPassword=False;Host=appsrvuat.wfs.tdc.org.hk;Port=5555" />
+        <Field Name="SmartForms Designer Runtime" Value="http://appsrvuat.wfs.tdc.org.hk:4443/Designer/Runtime" />
+        <Field Name="Workflow Management Server" Value="Integrated=True;IsPrimaryLogin=True;Authenticate=True;EncryptedPassword=False;Host=appsrvuat.wfs.tdc.org.hk;Port=5555" />
+        <Field Name="Web Service URL" Value="http://appsrvuat.wfs.tdc.org.hk:4443" />
+        <Field Name="Workspace Url SSL" Value="https://appsrvuat.wfs.tdc.org.hk:5443" />
+        <Field Name="From Address" Value="system@k2.local" />
+        <Field Name="Mail Server" Value="tdcmail.tdc.org.hk" />
+        <Field Name="SmartForms Runtime" Value="http://appsrvuat.wfs.tdc.org.hk:4443/Runtime/Runtime" />
+        <Field Name="Workflow Server" Value="Integrated=True;IsPrimaryLogin=True;Authenticate=True;EncryptedPassword=False;Host=appsrvuat.wfs.tdc.org.hk;Port=5252" />
+        <Field Name="SmartForms Designer" Value="http://appsrvuat.wfs.tdc.org.hk:4443/Designer" />
+        <Field Name="SmartForms Designer Runtime SSL" Value="https://appsrvuat.wfs.tdc.org.hk:5443/Designer/Runtime" />
+        <Field Name="SmartForms Runtime SSL" Value="https://appsrvuat.wfs.tdc.org.hk:5443/Runtime/Runtime" />
+        <Field Name="Category Server" Value="Integrated=True;IsPrimaryLogin=True;Authenticate=True;EncryptedPassword=False;Host=appsrvuat.wfs.tdc.org.hk;Port=5555" />
+        <Field Name="SPAUrl" Value="https://workflowuat.tdc.org.hk" />
+        <Field Name="Web Service URL SSL" Value="https://appsrvuat.wfs.tdc.org.hk:5443" />
+      </Root>
+    </EnvironmentFields>
+  </PropertyGroup>
+  <PropertyGroup Condition="$(Environment) == 'Production'">
+    <EnvironmentFields>
+      <Root Name="Production" xmlns="">
+        <Field Name="SmartObject Server" Value="Integrated=True;IsPrimaryLogin=True;Authenticate=True;EncryptedPassword=False;Host=appsrvuat.wfs.tdc.org.hk;Port=5555" />
+        <Field Name="Workspace Url" Value="http://appsrvuat.wfs.tdc.org.hk:4443" />
+        <Field Name="Escalation HR" Value="" />
+        <Field Name="SmartForms Server" Value="Integrated=True;IsPrimaryLogin=True;Authenticate=True;EncryptedPassword=False;Host=appsrvuat.wfs.tdc.org.hk;Port=5555" />
+        <Field Name="SmartForms Designer SSL" Value="https://appsrvuat.wfs.tdc.org.hk:5443/Designer" />
+        <Field Name="ServiceObject Server" Value="Integrated=True;IsPrimaryLogin=True;Authenticate=True;EncryptedPassword=False;Host=appsrvuat.wfs.tdc.org.hk;Port=5555" />
+        <Field Name="SmartForms Designer Runtime" Value="http://appsrvuat.wfs.tdc.org.hk:4443/Designer/Runtime" />
+        <Field Name="Workflow Management Server" Value="Integrated=True;IsPrimaryLogin=True;Authenticate=True;EncryptedPassword=False;Host=appsrvuat.wfs.tdc.org.hk;Port=5555" />
+        <Field Name="Web Service URL" Value="http://appsrvuat.wfs.tdc.org.hk:4443" />
+        <Field Name="Workspace Url SSL" Value="https://appsrvuat.wfs.tdc.org.hk:5443" />
+        <Field Name="From Address" Value="system@k2.local" />
+        <Field Name="Mail Server" Value="tdcmail.tdc.org.hk" />
+        <Field Name="SmartForms Runtime" Value="http://appsrvuat.wfs.tdc.org.hk:4443/Runtime/Runtime" />
+        <Field Name="Workflow Server" Value="Integrated=True;IsPrimaryLogin=True;Authenticate=True;EncryptedPassword=False;Host=appsrvuat.wfs.tdc.org.hk;Port=5252" />
+        <Field Name="SmartForms Designer" Value="http://appsrvuat.wfs.tdc.org.hk:4443/Designer" />
+        <Field Name="SmartForms Designer Runtime SSL" Value="https://appsrvuat.wfs.tdc.org.hk:5443/Designer/Runtime" />
+        <Field Name="SmartForms Runtime SSL" Value="https://appsrvuat.wfs.tdc.org.hk:5443/Runtime/Runtime" />
+        <Field Name="Category Server" Value="Integrated=True;IsPrimaryLogin=True;Authenticate=True;EncryptedPassword=False;Host=appsrvuat.wfs.tdc.org.hk;Port=5555" />
+        <Field Name="SPAUrl" Value="" />
+        <Field Name="Web Service URL SSL" Value="https://appsrvuat.wfs.tdc.org.hk:5443" />
+      </Root>
+    </EnvironmentFields>
+  </PropertyGroup>
+  <PropertyGroup>
+    <WorkflowManagementConnectionStringProperty>$Field=Workflow Management Server</WorkflowManagementConnectionStringProperty>
+    <SmartObjectConnectionStringProperty>$Field=SmartObject Server</SmartObjectConnectionStringProperty>
+    <DeploymentLabelName>DENALLIX\k2admin - 3/29/2017 11:27:42 aM</DeploymentLabelName>
+    <DeploymentLabelDescription />
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageResource Include="Resources\TDC-CHSW-CHSW.Processes.res">
+      <Name>TDC-CHSW-CHSW</Name>
+      <Group>Processes</Group>
+    </PackageResource>
+    <PackageResource Include="Resources\TDC-CHSW-CHSWTask.Processes.res">
+      <Name>TDC-CHSW-CHSWTask</Name>
+      <Group>Processes</Group>
+    </PackageResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageResource Include="Resources\NotificationServiceDetails 8018b814b2bb4d4b9320b015f6c58da7.Notifications.res">
+      <Name>NotificationServiceDetails 8018b814b2bb4d4b9320b015f6c58da7</Name>
+      <Group>Notifications</Group>
+    </PackageResource>
+    <PackageResource Include="Resources\NotificationServiceDetails b76e91dce1e84aa3927825a2d73f79f8.Notifications.res">
+      <Name>NotificationServiceDetails b76e91dce1e84aa3927825a2d73f79f8</Name>
+      <Group>Notifications</Group>
+    </PackageResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageResource Include="Resources\WorkflowReportingServiceDetails 25e233fd-abdf-4d61-ba9a-b073626ea92b.WorkflowReportingSmartObjects.res">
+      <Name>WorkflowReportingServiceDetails 25e233fd-abdf-4d61-ba9a-b073626ea92b</Name>
+      <Group>WorkflowReportingSmartObjects</Group>
+    </PackageResource>
+    <PackageResource Include="Resources\WorkflowReportingServiceDetails f9a88d8f-e99d-4b4f-bf50-88e513d325dd.WorkflowReportingSmartObjects.res">
+      <Name>WorkflowReportingServiceDetails f9a88d8f-e99d-4b4f-bf50-88e513d325dd</Name>
+      <Group>WorkflowReportingSmartObjects</Group>
+    </PackageResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageResource Include="Resources\TDC-CHSW-CHSW-ProcessView.Views.res">
+      <Name>TDC-CHSW-CHSW-ProcessView</Name>
+      <Group>Views</Group>
+    </PackageResource>
+    <PackageResource Include="Resources\TDC-CHSW-CHSWTask-ProcessView.Views.res">
+      <Name>TDC-CHSW-CHSWTask-ProcessView</Name>
+      <Group>Views</Group>
+    </PackageResource>
+  </ItemGroup>
+  <Target Name="Deploy" DependsOnTargets="Deploy Processes;Create Notifications;Create Workflow SmartObjects;Create Workflow Reporting SmartObjects" />
+  <Import Project="ProjectDeployment.targets" />
+  <Target Name="Deploy Processes" Condition="$(Deploy_Processes) == 'true'">
+    <SourceCode.DeploymentTasks.ExportProcessTask TaskGuid="b4eab1cb9e0b469ca0cf1c8330040ad0" />
+  </Target>
+  <UsingTask TaskName="SourceCode.DeploymentTasks.ExportProcessTask" AssemblyFile="Bin\SourceCode.DeploymentTasks.dll" />
+  <Target Name="Create Notifications" Condition="$(Create_Notifications) == 'true'">
+    <SourceCode.DeploymentTasks.NotificationService.NotificationTask TaskGuid="36f5168aedd24f66891fb9e71ef3237a" />
+  </Target>
+  <UsingTask TaskName="SourceCode.DeploymentTasks.NotificationService.NotificationTask" AssemblyFile="Bin\SourceCode.DeploymentTasks.dll" />
+  <Target Name="Create Workflow SmartObjects" Condition="$(Create_Workflow_SmartObjects) == 'true'" />
+  <Target Name="Create Workflow Reporting SmartObjects" Condition="$(Create_Workflow_Reporting_SmartObjects) == 'true'">
+    <SourceCode.DeploymentTasks.SmartObjectServices.WorkflowReportingServiceTask TaskGuid="4a5dae8428414d3face96321519d80c7" />
+  </Target>
+  <UsingTask TaskName="SourceCode.DeploymentTasks.SmartObjectServices.WorkflowReportingServiceTask" AssemblyFile="Bin\SourceCode.DeploymentTasks.dll" />
+</Project>

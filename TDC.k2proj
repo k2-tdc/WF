@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Name>TDC</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{892fd992-1562-418e-856e-286ba578c7c1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TDC</RootNamespace>
+    <AssemblyName>TDC</AssemblyName>
+    <Language>C#</Language>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SelectedEnvironment>Development</SelectedEnvironment>
+    <DeploymentLabelName>DENALLIX\k2admin - 3/28/2017 5:55:42 PM</DeploymentLabelName>
+    <DeploymentLabelDescription>
+    </DeploymentLabelDescription>
+    <SmartObjectConnectionStringProperty>$Field=SmartObject Server</SmartObjectConnectionStringProperty>
+    <WorkflowManagementConnectionStringProperty>$Field=Workflow Management Server</WorkflowManagementConnectionStringProperty>
+    <HistoryIsAdvanced>Advanced</HistoryIsAdvanced>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <IncludeDebugInformation>true</IncludeDebugInformation>
+    <OutputPath>bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <IncludeDebugInformation>false</IncludeDebugInformation>
+    <OutputPath>bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="CHSW\CHSW.kprx" />
+    <Content Include="CHSW\CHSWTask.kprx" />
+    <Content Include="CHSW\CreateProcessLog.sodx">
+      <Excluded>True</Excluded>
+    </Content>
+    <Content Include="CHSW\GenerateEmailNotificationCCTask.sodx">
+      <Excluded>True</Excluded>
+    </Content>
+    <Content Include="CHSW\GenerateEmailNotificationTask.sodx">
+      <Excluded>True</Excluded>
+    </Content>
+    <Content Include="CHSW\GenerateFormActionTakers.sodx">
+      <Excluded>True</Excluded>
+    </Content>
+    <Content Include="CHSW\GenerateITSApprover.sodx">
+      <Excluded>True</Excluded>
+    </Content>
+    <Content Include="CHSW\GetActionTakerForwardee.sodx">
+      <Excluded>True</Excluded>
+    </Content>
+    <Content Include="CHSW\GetFormApplicant.sodx">
+      <Excluded>True</Excluded>
+    </Content>
+    <Content Include="CHSW\GetFormApprover.sodx">
+      <Excluded>True</Excluded>
+    </Content>
+    <Content Include="CHSW\GetFormPreparer.sodx">
+      <Excluded>True</Excluded>
+    </Content>
+    <Content Include="CHSW\GetFormTaskActionerID.sodx">
+      <Excluded>True</Excluded>
+    </Content>
+    <Content Include="CHSW\GetFormSubmittedTo.sodx">
+      <Excluded>True</Excluded>
+    </Content>
+    <Content Include="CHSW\GetFormTaskActioner.sodx">
+      <Excluded>True</Excluded>
+    </Content>
+    <Content Include="CHSW\GetFormWorkerProfile.sodx">
+      <Excluded>True</Excluded>
+    </Content>
+    <Content Include="CHSW\GetITSApprover.sodx">
+      <Excluded>True</Excluded>
+    </Content>
+    <Content Include="CHSW\GetWorkerProfile.sodx">
+      <Excluded>True</Excluded>
+    </Content>
+    <Content Include="CHSW\UpdateFormProcInstID.sodx">
+      <Excluded>True</Excluded>
+    </Content>
+    <Content Include="CHSW\UpdateFormStatus.sodx">
+      <Excluded>True</Excluded>
+    </Content>
+    <Content Include="CHSW\UpdateFormTaskActionerProcInstID.sodx">
+      <Excluded>True</Excluded>
+    </Content>
+    <Content Include="CHSW\UpdateFormTaskActionerStatus.sodx">
+      <Excluded>True</Excluded>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CHSW" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\SourceCode\v3.5\ProjectSystem.targets" />
+</Project>

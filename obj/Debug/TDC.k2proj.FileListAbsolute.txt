@@ -1,0 +1,5 @@
+C:\_SourceCode\_WF\_TDC\obj\Debug\TDC.dll
+C:\_SourceCode\_WF\_TDC\bin\Debug\TDC.dll
+D:\_SourceCode\_WF\_TDC\bin\Debug\TDC.dll
+D:\_SourceCode\_WF\_TDC\obj\Debug\TDC.k2projResolveAssemblyReference.cache
+D:\_SourceCode\_WF\_TDC\obj\Debug\TDC.dll
